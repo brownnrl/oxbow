@@ -56,6 +56,7 @@ public final class TableRowFilterSupport {
     private boolean actionsVisible = true;
     private int filterIconPlacement = SwingConstants.LEADING;
     private boolean useTableRenderers = false;
+    private TableFilterColumnPopup filterPopup = null;
 
     private TableRowFilterSupport( ITableFilter<?> filter ) {
         if ( filter == null ) throw new NullPointerException();
@@ -139,10 +140,15 @@ public final class TableRowFilterSupport {
         filterPopup.setSearchFilter(searchFilter);
         filterPopup.setSearchTranslator(translator);
         filterPopup.setUseTableRenderers( useTableRenderers );
+        this.filterPopup = filterPopup;
 
         setupTableHeader();
 
         return filter.getTable();
+    }
+
+    public TableFilterColumnPopup getFilterPopup() {
+        return this.filterPopup;
     }
 
     private void setupTableHeader() {

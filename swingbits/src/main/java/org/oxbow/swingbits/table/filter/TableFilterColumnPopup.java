@@ -71,7 +71,7 @@ import org.oxbow.swingbits.popup.PopupWindow;
 import org.oxbow.swingbits.util.CollectionUtils;
 import org.oxbow.swingbits.util.IObjectToStringTranslator;
 
-class TableFilterColumnPopup extends PopupWindow implements MouseListener {
+public class TableFilterColumnPopup extends PopupWindow implements MouseListener {
 
         static class ColumnAttrs {
             public Dimension preferredSize;
@@ -239,7 +239,7 @@ class TableFilterColumnPopup extends PopupWindow implements MouseListener {
             if ( enabled && e.isPopupTrigger() ) showFilterPopup(e);
         }
 
-        private void showFilterPopup(MouseEvent e) {
+        public void showFilterPopup(MouseEvent e) {
             JTableHeader header = (JTableHeader)(e.getSource());
             TableColumnModel colModel = filter.getTable().getColumnModel();
 

@@ -108,7 +108,7 @@ public class TableFilterTest implements Runnable {
                                             .searchable(true)
                                             .useTableRenderers(true);
         JTable table = filter.apply();
-                table.setModel( new DefaultTableModel(data, colNames) );
+        table.setModel( new DefaultTableModel(data, colNames) );
         table.getColumnModel().getColumn(0).setCellRenderer(new TestRenderer());
         return table;
     }
